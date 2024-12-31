@@ -498,6 +498,11 @@ h6,
 
 }
 
+.btn-closetext{
+    border-radius: 5px;
+    color: white;
+}
+
 /*** Testimonial ***/
 .testimonial-carousel {
     display: flex !important;

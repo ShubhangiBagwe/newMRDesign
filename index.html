@@ -689,19 +689,62 @@
                             </div>
                             <div class="col-12 col-sm-6">
                                 <input type="text" id="mobile" class="form-control" placeholder="Your Mobile"
-                                    style="height: 55px;">
+                                    style="height: 55px;" required>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <input type="date" id="date" class="form-control" style="height: 55px;">
+                                <input type="date" id="date" class="form-control" style="height: 55px;" required>
                             </div>
                             <div class="col-12">
-                                <textarea id="message" class="form-control" rows="5" placeholder="Message"></textarea>
+                                <textarea id="message" class="form-control" rows="5" placeholder="Message"
+                                    required></textarea>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                <button class="btn btn-primary w-100 py-3 " type="submit">Submit</button>
                             </div>
                         </div>
                     </form>
+
+                    <!-- Success Modal -->
+                    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="successModalLabel">Email Sent</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Your email has been sent successfully!
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn-closetext btn-primary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Error Modal -->
+                    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Failed to send email. Please try again later.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -797,9 +840,12 @@
 
             // Email configuration
             Email.send({
-                SecureToken: "a713b242-728d-453c-b8ba-18c0ccd21109", // Replace with your SMTP.js secure token
-                To: "shubhangibagwe85@gmail.com", // Replace with your email
-                From: email, // Sender's email
+                Host: "smtp.elasticemail.com",
+                Port: '2525',
+                Username: "shubhangibagwe2000@gmail.com",
+                Password: "154E27E0AFB010719072A37D63D80A8507B3",
+                To: "shubhangibagwe2000@gmail.com",
+                From: "shubhangibagwe2000@gmail.com",
                 Subject: `Contact Form Submission from ${name}`,
                 Body: `
                     <h3>Contact Form Details</h3>
@@ -809,14 +855,19 @@
                     <p><strong>Date:</strong> ${date}</p>
                     <p><strong>Message:</strong> ${message}</p>
                 `,
-            }).then((message) => {
-                alert("Your email has been sent successfully!");
+            }).then(() => {
+                // Show success modal
+                const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                successModal.show();
             }).catch((error) => {
-                alert("Failed to send email. Please try again.");
+                // Show error modal
+                const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
+                errorModal.show();
                 console.error(error);
             });
         });
     </script>
+
 
 
     <!-- Template Javascript -->
