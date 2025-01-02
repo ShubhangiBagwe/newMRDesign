@@ -616,3 +616,12 @@ h6,
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
+
+
+.swal2-confirm {
+    background-color: #8b0000 !important;
+    color: white !important;
+    border-radius: 6px !important;
+    padding: 10px 20px !important;
+}
