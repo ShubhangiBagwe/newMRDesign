@@ -7,15 +7,15 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const message = document.getElementById("message").value;
 
     try {
-        console.log("base URL",process.env.BASE_API_URL)
-        const response = await fetch(`${process.env.BASE_API_URL}/send-email`, {
+        // console.log("base URL", process.env.BASE_API_URL)
+        const response = await fetch(`https://mrdesign.onrender.com/send-email`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ name, email, message }),
         });
-
+        console.log('response', response)
         if (response.ok) {
             Swal.fire({
                 icon: "success",
@@ -32,6 +32,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
             });
         }
     } catch (error) {
+        console.log('error', error)
         Swal.fire({
             icon: "error",
             title: "Error",
