@@ -7,7 +7,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const message = document.getElementById("message").value;
 
     try {
-        // console.log("base URL", process.env.BASE_API_URL)
         const response = await fetch(`https://mrdesign.onrender.com/send-email`, {
             method: "POST",
             headers: {
@@ -15,7 +14,6 @@ document.getElementById("contactForm").addEventListener("submit", async function
             },
             body: JSON.stringify({ name, email, message }),
         });
-        console.log('response', response)
         if (response.ok) {
             Swal.fire({
                 icon: "success",
