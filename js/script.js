@@ -7,6 +7,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const message = document.getElementById("message").value;
 
     try {
+        console.log("base URL",process.env.BASE_API_URL)
         const response = await fetch(`${process.env.BASE_API_URL}/send-email`, {
             method: "POST",
             headers: {
