@@ -5,6 +5,8 @@ document.getElementById("contactForm").addEventListener("submit", async function
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
+    const number = document.getElementById("number").value;
+
 
     try {
         const response = await fetch(`https://mrdesign.onrender.com/send-email`, {
@@ -12,7 +14,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ name, email, message }),
+            body: JSON.stringify({ name, email, message,number }),
         });
         if (response.ok) {
             Swal.fire({

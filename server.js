@@ -12,9 +12,9 @@ app.use(bodyParser.json());
 app.use(cors());
 // Route to send email
 app.post("/send-email", async (req, res) => {
-  const { name, email, message } = req.body;
-  console.log(name, email, "nameeeee")
-  if (!name || !email || !message) {
+  const { name, email, message,number } = req.body;
+  console.log(name, email,number, "nameeeee")
+  if (!name || !email || !message || !number)  {
     return res.status(400).send("All fields are required.");
   }
 
@@ -33,7 +33,7 @@ app.post("/send-email", async (req, res) => {
       from: process.env.EMAIL,
       to: "shubhangibagwe2000@gmail.com", // Replace with the recipient's email address
       subject: "Contact Form Submission",
-      text: `You have a new contact form submission:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      text: `You have a new contact form submission:\n\nName: ${name}\nEmail: ${email}\NNumber: ${number}\nMessage: ${message}`,
     };
 
     // Send the email
