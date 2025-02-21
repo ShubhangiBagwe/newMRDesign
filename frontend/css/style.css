@@ -655,3 +655,41 @@ h6,
     height: 90vh !important;
   }
 }
+
+
+/* project section start */
+
+.project {
+  min-height: 100vh;
+  background: #333;
+}
+
+.project .heading {
+  color: #fff;
+}
+
+.project .box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.projectbox {
+  height: 16rem;
+  width: 25rem;
+  /* gap: 5rem;
+  border-radius: 0.5rem;x
+  /* margin: 2rem; */
+  /* overflow: hidden; */
+  /* box-shadow: 0 0.3rem 0.5rem #000; */ 
+}
+
+.projectimg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* .projectbox:hover {
+  transform: scale(1.3);
+} */
