@@ -335,7 +335,7 @@ h6,
 .about-img::before,
 .feature-img::before {
   position: absolute;
-  content: "";
+  /* content: ""; */
   width: 60%;
   height: 80%;
   top: 10%;
@@ -610,7 +610,7 @@ h6,
 
 .footer .btn.btn-link::before {
   position: relative;
-  content: "\f105";
+  content: ">";
   font-family: "Poppins", serif;
   font-weight: 900;
   color: var(--primary);
@@ -646,4 +646,12 @@ h6,
   color: white !important;
   border-radius: 6px !important;
   padding: 10px 20px !important;
+}
+
+/* shubh style  */
+
+@media (min-width: 992px) {
+  .imgh {
+    height: 90vh !important;
+  }
 }
