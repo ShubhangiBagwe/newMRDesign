@@ -62,8 +62,9 @@ h6,
 
 .btn.btn-primary,
 .btn.btn-secondary {
-  color: #ffffff;
+  color: #d0d0d0;
 }
+
 
 .btn-square {
   width: 38px;
@@ -602,10 +603,14 @@ h6,
   margin-bottom: 5px;
   padding: 0;
   text-align: left;
-  color: #777777;
+  color: #d0d0d0 ;
   font-weight: normal;
   text-transform: capitalize;
   transition: 0.3s;
+}
+
+.footerp {
+  color: #d0d0d0;
 }
 
 .footer .btn.btn-link::before {
