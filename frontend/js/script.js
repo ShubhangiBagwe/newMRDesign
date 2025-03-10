@@ -9,7 +9,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 
     try {
-        const response = await fetch(`https://mrdesign.onrender.com/send-email`, {
+        const response = await fetch(`https://newmrdesign.onrender.com/send-email`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
